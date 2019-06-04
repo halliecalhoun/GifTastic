@@ -17,32 +17,45 @@ function displayFoodInfo() {
         $("#gif-div").empty();
    
         for (var i = 0; i < response.data.length; i++) {
+          // add if != "r" && != "pg-13" 
         var gifInfoDiv = $("<div>");
         gifInfoDiv.addClass("gifInfoContent");
 
         var foodRating = $("<h3>").text("Rating: " + response.data[i].rating);
 
         var imageDiv = $("<img>");
+        // add fixed height gif from data object array in console log
+        // imageDiv.attr("src", response.data[i].images["fixed_height"].url);
         imageDiv.attr("src", response.data[i].images["original_still"].url);
         imageDiv.attr("data-still", response.data[i].images["original_still"].url);
-        imageDiv.attr("data-original", response.data[i].images["original"].url);
+        imageDiv.attr("data-animate", response.data[i].images["original"].url);
+        imageDiv.attr("data-state", "still");
         imageDiv.addClass("gif");
-        // var artistURL = $("<a>").attr("href", response.url).append(artistName);
-        // var artistImage = $("<img>").attr("src", response.thumb_url);
-        // var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
-        // var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-        // var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+    
         gifInfoDiv.append(foodRating);
         gifInfoDiv.append(imageDiv);
         $("#gif-div").append(gifInfoDiv);
-        
-  
         }
-
-     
     })
   };
 
+  // gif on click pause function
+  // $(".gif").on("click", function() {
+    $("#gif-div").on("click", ".gif", function() {
+      var state = $(this).attr("data-state");
+      if (state === 'still') {
+        var animate = $(this).attr("data-animate");
+        $(this).attr("src", animate);
+        $(this).attr("data-state", "animate");
+        // state = animate;
+      } else {
+        var still = $(this).attr("data-still");
+        $(this).attr("src", still);
+        $(this).attr("data-state", "still");
+        // $(this).attr("src", $(this).attr("data-still"));
+        // $(this).attr("data-state", "still");
+      }
+    });
 
 function renderButtons() {
 
