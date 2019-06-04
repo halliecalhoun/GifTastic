@@ -1,4 +1,4 @@
-var topics = ["burger", "pizza", "sandwich", "salad", "soup", "chips", "steak", "smoothie", "fries", "burrito", "taco"];
+var topics = ["burger", "pizza", "sandwich", "salad", "soup", "pasta", "smoothie", "fries", "burrito", "taco"];
 var API_key = "vuhLAezXLof5lt9HMtQdMox0ZRd207JU";
 
 
@@ -6,7 +6,7 @@ function displayFoodInfo() {
 
     // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
     var gifSearch = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&limit=10&apikey=" + API_key;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&limit=12&apikey=" + API_key;
     console.log(queryURL);
 
     $.ajax({
@@ -20,7 +20,7 @@ function displayFoodInfo() {
         var gifInfoDiv = $("<div>");
         gifInfoDiv.addClass("gifInfoContent");
 
-        var foodRating = $("<h1>").text("Rating: " + response.data[i].rating);
+        var foodRating = $("<h3>").text("Rating: " + response.data[i].rating);
 
         var imageDiv = $("<img>");
         imageDiv.attr("src", response.data[i].images["original_still"].url);

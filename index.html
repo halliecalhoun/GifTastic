@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
      <!-- CSS link -->
      <link rel="stylesheet" href="../GifTastic/assets/css/style.css">
     
 </head>
 <body>
-    <div class="container">
+    <div class="w3-container w3-center w3-animate-top">
         <h1>GifTastic Foods!</h1>
-    
+    </div>
         <!-- Buttons will Get Dumped Dere -->
         <div id="buttons-view"></div>
 
         <div id="gif-list-view"></div>
-    
+        <br>
+        <br>
         <form id="food-form">
-          <label for="food-input">Add a food</label>
-          <input type="text" id="food-input"><br>
-    
+          <label for="food-input">Don't see your favorite food listed? Add it here!</label>
+          <input type="text" id="food-input">
+            
           <!-- Button triggers new movie to be added -->
           <input id="add-food" type="submit" value="Add food">
         </form>
+        <br>
+        <br>
 
         <div id="gif-div"></div>
-    
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
