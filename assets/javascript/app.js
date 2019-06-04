@@ -82,13 +82,14 @@ function renderButtons() {
   }  
   
   // Event handler for user clicking the select-artist button
-  $("#add-gif").on("click", function(event) {
+  $("#add-food").on("click", function(event) {
     // Preventing the button from trying to submit the form
     event.preventDefault();
     // Storing the artist name
-    var getGif = $("#gif-input").val().toLowerCase().trim();
+    var getGif = $("#food-input").val().toLowerCase().trim();
     if (getGif != "") {
         topics.push(getGif);
+        $("#food-input").val("");
 
     }
     renderButtons();
