@@ -90,7 +90,7 @@ function renderButtons() {
     // Storing the artist name
     
     var getGif = $("#food-input").val().toLowerCase().trim();
-    if (getGif != "" && getGif === keyChoices) {
+    if (getGif != "" || getGif === keyChoices) {
         topics.push(getGif);
         $("#food-input").val(""); 
 
