@@ -29,6 +29,7 @@ h1 {
     text-align: center;
     margin-top: 35px;
     margin-bottom: 25px;
+    color: rgb(46, 46, 46);
     /* font-family: 'Fascinate Inline', cursive; */
     /* font-family: 'Bowlby One SC', cursive; */
     font-family: 'Boogaloo', cursive;
@@ -51,8 +52,9 @@ font-family: 'Ribeye Marrow', cursive; */
 
 label {
     font-size: 26px;
-    font-weight: 600;
+    font-weight: bold;
     padding-top: 2px;
+    color: rgb(46, 46, 46);
 }
 .container {
     margin-bottom: 50px;
