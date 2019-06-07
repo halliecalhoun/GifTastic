@@ -1,5 +1,7 @@
 var topics = ["burger", "pizza", "sandwich", "salad", "soup", "pasta", "smoothie", "fries", "burrito", "taco"];
 var API_key = "vuhLAezXLof5lt9HMtQdMox0ZRd207JU";
+var keyChoices = "abcdefghijklmnopqrstuvwxyz";
+
 
 
 function displayFoodInfo() {
@@ -59,11 +61,11 @@ function displayFoodInfo() {
 
 function renderButtons() {
 
-    // Deleting the buttons prior to adding new movies
+    // Deleting the buttons prior to adding new ones
     // (this is necessary otherwise you will have repeat buttons)
     $("#buttons-view").empty();
 
-    // Looping through the array of movies
+    // Looping through the array of foods
     for (var i = 0; i < topics.length; i++) {
 
       // Then dynamicaly generating buttons for each movie in the array
@@ -86,10 +88,11 @@ function renderButtons() {
     // Preventing the button from trying to submit the form
     event.preventDefault();
     // Storing the artist name
+    
     var getGif = $("#food-input").val().toLowerCase().trim();
-    if (getGif != "") {
+    if (getGif != "" && getGif === keyChoices) {
         topics.push(getGif);
-        $("#food-input").val("");
+        $("#food-input").val(""); 
 
     }
     renderButtons();
